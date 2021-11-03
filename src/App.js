@@ -5,6 +5,5 @@ const App = () => (
     <Nav />
   </>
 );
-  
+
 export default App;
-  

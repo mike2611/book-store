@@ -7,9 +7,9 @@ const Book = () => (
       Progress 100%
     </td>
     <td>
-      <button className='btn btn-primary'>REMOVE</button>
+      <button type="button" className="btn btn-primary">REMOVE</button>
     </td>
   </>
-)
+);
 
 export default (Book);
