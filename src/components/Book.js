@@ -6,6 +6,9 @@ const Book = () => (
     <td>
       Progress 100%
     </td>
+    <td>
+      <button className='btn btn-primary'>REMOVE</button>
+    </td>
   </>
 )
 

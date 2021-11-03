@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import React, { useState } from 'react';
 import Book from './Book';
+import FormBook from './FormBook';
 
 
 const Books = () => {
   const [books] = useState(
     [
-      { idBook: 0,title: 'Book 1 Title',progress: '80%'},
-      { idBook: 1,title: 'Book 2 Title',progress: '60%'},
-      { idBook: 2,title: 'Book 3 Title',progress: '50%'},
+      { idBook: 0,TitleBook: ''},
+      { idBook: 0,TitleBook: ''},
+      { idBook: 0,TitleBook: ''},
     ]
   );
   return (
     <div className='container'>
       <Table>
         <tbody>
-          {books.map(() => 
+          {books.map((book) => 
             <tr>
               <Book/>
             </tr>
           )}
         </tbody>
       </Table>
+      <FormBook />
     </div>
   ) 
 }
