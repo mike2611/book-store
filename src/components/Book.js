@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksReducer';
+
+const removeBookToStore = (id) => {
+  const dispatch = useDispatch();
+  dispatch(removeBook(id));
+};
 
 const Book = (props) => {
   const { key, title, author } = props;
-
   return (
     <>
       <td>
@@ -15,7 +21,7 @@ const Book = (props) => {
         {author}
       </td>
       <td>
-        <button type="button" className="btn btn-primary">REMOVE</button>
+        <button type="button" className="btn btn-primary" onClick={removeBookToStore(key)}>REMOVE</button>
       </td>
     </>
   );
