@@ -1,10 +1,8 @@
-import Books from './components/Books';
-import Categories from './components/Categories';
+import Nav from './NavBar';
 
 const App = () => (
   <>
-    <Books/>
-    <Categories/>
+    <Nav />
   </>
 );
   
