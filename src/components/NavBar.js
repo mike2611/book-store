@@ -1,8 +1,8 @@
 import {
   BrowserRouter as Router, Link, Switch, Route,
 } from 'react-router-dom';
-import Books from './components/Books';
-import Categories from './components/Categories';
+import Books from './Books';
+import Categories from './Categories';
 
 const NavBar = () => (
   <Router>
