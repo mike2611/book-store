@@ -1,35 +1,43 @@
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
 import { addBook } from '../redux/books/booksReducer';
 
-let bookTitle = '';
-let bookAuthor = '';
+const FormBook = (props) => {
+  const { update } = props;
+  const [inputs, setInputs] = useState(
+    {
+      title: ' ',
+      author: ' ',
+    },
+  );
 
-const updateTitle = (e) => {
-  bookTitle = e.target.value;
-};
-
-const updateAuthor = (e) => {
-  bookAuthor = e.target.value;
-};
-
-const submitBookToStore = () => {
-  const dispatch = useDispatch();
-  const newBook = {
-    id: uuid(),
-    title: bookTitle,
-    author: bookAuthor,
+  const changeInputs = (e) => {
+    setInputs({
+      ...inputs, [e.target.name]: e.target.value,
+    });
   };
-  dispatch(addBook(newBook));
-};
 
-const FormBook = () => (
-  <div>
-    <h1>ADD NEW BOOK</h1>
-    <input type="text" placeholder="Book Title" onChange={updateTitle} />
-    <input type="text" placeholder="Book Author" onChange={updateAuthor} />
-    <button type="button" onClick={submitBookToStore}>Add Book</button>
-  </div>
-);
+  const dispatch = useDispatch();
+
+  const submitBookToStore = () => {
+    const newBook = {
+      idBook: uuid(),
+      title: inputs.title,
+      author: inputs.author,
+    };
+    dispatch(addBook(newBook));
+    update();
+  };
+  return (
+    <div>
+      <h1>ADD NEW BOOK</h1>
+      <input type="text" placeholder="Book Title" name="title" value={inputs.title} onChange={changeInputs} />
+      <input type="text" placeholder="Book Author" name="author" value={inputs.author} onChange={changeInputs} />
+      <button type="button" onClick={submitBookToStore}>Add Book</button>
+    </div>
+  );
+};
 
 export default (FormBook);
