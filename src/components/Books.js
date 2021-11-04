@@ -1,25 +1,30 @@
 import Table from 'react-bootstrap/Table';
-import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import FormBook from './FormBook';
 
 const Books = () => {
-  const [books] = useState(
-    [
-      { idBook: 0, title: 'Example Book 1', author: 'Example Author' },
-      { idBook: 1, title: 'Example Book 2', author: 'Example Author' },
-      { idBook: 2, title: 'Example Book 3', author: 'Example Author' },
-    ],
-  );
+  const selector = useSelector((state) => state.booksReducer);
+  const books = selector;
+
   return (
     <div className="container">
       <Table>
         <tbody>
-          {books.map((book) => (
-            <tr key={book.idBook}>
-              <Book key={book.idBook} title={book.title} author={book.author} />
-            </tr>
-          ))}
+          {
+            books.length !== 0
+              ? books.map((book) => (
+                <Book
+                  key={`${book.idBook}k`}
+                  id={book.idBook}
+                  title={book.title}
+                  author={book.author}
+                />
+              ))
+              : (
+                <Book key="1" id="id" title="emptyList" author="emptyList" />
+              )
+          }
         </tbody>
       </Table>
       <FormBook />
