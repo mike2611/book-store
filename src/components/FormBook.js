@@ -4,8 +4,7 @@ import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
 import { addBook } from '../redux/books/booksReducer';
 
-const FormBook = (props) => {
-  const { update } = props;
+const FormBook = () => {
   const [inputs, setInputs] = useState(
     {
       title: ' ',
@@ -28,7 +27,6 @@ const FormBook = (props) => {
       author: inputs.author,
     };
     dispatch(addBook(newBook));
-    update();
   };
   return (
     <div>

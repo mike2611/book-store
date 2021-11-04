@@ -1,20 +1,11 @@
 import Table from 'react-bootstrap/Table';
-import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Book from './Book';
 import FormBook from './FormBook';
 
 const Books = () => {
   const selector = useSelector((state) => state.booksReducer);
-  const [books, setBooks] = useState(selector);
-
-  const seeState = () => {
-    console.log(books);
-  };
-
-  const updateBooks = () => {
-    setBooks(selector);
-  };
+  const books = selector;
 
   return (
     <div className="container">
@@ -36,8 +27,7 @@ const Books = () => {
           }
         </tbody>
       </Table>
-      <FormBook update={updateBooks} />
-      <button type="button" onClick={seeState}>Click</button>
+      <FormBook />
     </div>
   );
 };
