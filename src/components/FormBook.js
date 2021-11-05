@@ -53,7 +53,7 @@ const FormBook = (props) => {
         </select>
         <p className={classInactive ? 'd-none' : null}> You cant add a book that already exists in the table.</p>
         <div className="d-flex justify-content-center formBtnDiv">
-          <button className="btnForm mt-4 mt-md-0" type="button" onClick={submitBookToStore}>Add Book</button>
+          <button className="btnForm mt-4 mt-md-0 mb-3" type="button" onClick={submitBookToStore}>Add Book</button>
         </div>
       </div>
     </div>

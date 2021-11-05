@@ -25,7 +25,7 @@ const Book = (props) => {
     );
   }
   return (
-    <tr className="bg-white bookContainer d-flex justify-content-around mb-3">
+    <tr className="bg-white bookContainer d-flex flex-column flex-md-row justify-content-around mb-3">
       <td>
         <div>
           <p className="bookCategory mb-0">{category}</p>
@@ -45,17 +45,20 @@ const Book = (props) => {
       <td className="mt-2">
         <div className="d-flex">
           <div className="d-flex align-items-center">
-            <div className="bookProgress me-4" />
-            <div className="text-center">
+            <div className="bookProgress me-4 d-none d-md-block" />
+            <div className="text-center ms-2">
               <h1 className="bookProgressNumber">75%</h1>
               <p className="bookStatus">Completed</p>
             </div>
           </div>
-          <div className="bookDivisor mx-5 mt-1" />
-          <div>
-            <p className="bookChapterTitle m-0">CURRENT CHAPTER</p>
+          <div className="bookDivisor mx-2 mx-md-5 mt-1" />
+          <div className="d-flex flex-column align-items-center">
+            <p className="bookChapterTitle my-0">CURRENT CHAPTER</p>
             <p className="bookCurrentChapter">Chapter 17</p>
-            <button type="button" className="booksUpdateProgress">UPDATE PROGRESS</button>
+            <button type="button" className="booksUpdateProgress">
+              UPDATE
+              <span className="d-none d-md-inline"> PROGRESS </span>
+            </button>
           </div>
         </div>
       </td>
