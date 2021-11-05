@@ -5,7 +5,7 @@ const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
-let initialState = [];
+const initialState = [];
 
 export const getBooks = () => async (dispatch) => {
   try {
@@ -14,7 +14,7 @@ export const getBooks = () => async (dispatch) => {
     dispatch({
       type: GET_BOOKS,
       payload: booksList,
-    })
+    });
   } catch (error) {
     console.log(error);
   }
@@ -28,7 +28,7 @@ export const addBook = (book) => async (dispatch) => {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ item_id: book.idBook ,title: book.title, category: book.category }),
+      body: JSON.stringify({ item_id: book.idBook, title: book.title, category: book.category }),
     });
     dispatch({
       type: ADD_BOOK,
@@ -41,12 +41,12 @@ export const addBook = (book) => async (dispatch) => {
 
 export const removeBook = (bookId) => async (dispatch) => {
   try {
-    await fetch(booksURL+`/${bookId}`, {
+    await fetch(`${booksURL}/${bookId}`, {
       method: 'DELETE',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application',
-      }
+      },
     });
     dispatch({
       type: REMOVE_BOOK,
@@ -64,7 +64,7 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => `${book[0].title}id`!== action.payload);
+      return state.filter((book) => `${book[0].title}id` !== action.payload);
     default:
       return state;
   }

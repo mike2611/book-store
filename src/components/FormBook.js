@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksReducer';
@@ -21,7 +22,7 @@ const FormBook = (props) => {
   const dispatch = useDispatch();
 
   const submitBookToStore = () => {
-    if(arrayIds.includes(`${inputs.title}id`)) {
+    if (arrayIds.includes(`${inputs.title}id`)) {
       setActive(false);
     } else {
       setActive(true);
@@ -34,10 +35,10 @@ const FormBook = (props) => {
       setInputs({
         title: ' ',
         category: 'Horror',
-      })
+      });
     }
   };
-  
+
   return (
     <div>
       <h1>ADD NEW BOOK</h1>
@@ -49,7 +50,7 @@ const FormBook = (props) => {
         <option>Historical</option>
         <option>Thriller</option>
       </select>
-      <p className={classInactive ? "d-none" : null}> You can't add a book that already exists in the table.</p>
+      <p className={classInactive ? 'd-none' : null}> You cant add a book that already exists in the table.</p>
       <button type="button" onClick={submitBookToStore}>Add Book</button>
     </div>
   );
