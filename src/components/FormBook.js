@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksReducer';
@@ -54,6 +54,10 @@ const FormBook = (props) => {
       <button type="button" onClick={submitBookToStore}>Add Book</button>
     </div>
   );
+};
+
+FormBook.propTypes = {
+  arrayIds: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default (FormBook);
