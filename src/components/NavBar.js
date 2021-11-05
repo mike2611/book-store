@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from 'react-icons/fa';
 
 const NavBar = () => (
   <nav className="navbar navbar-expand-md navbar-light bg-light d-flex justify-content-center justify-content-md-start">
@@ -13,10 +13,8 @@ const NavBar = () => (
       <li className="nav-item mx-auto">
         <Link to="/categories" className="nav-link">Categories</Link>
       </li>
-      <li>
-        <h2>FaUserAlt</h2>
-      </li>
     </ul>
+    <FaUserAlt className="navIcon ms-auto me-5 d-none d-md-flex" />
   </nav>
 );
 
