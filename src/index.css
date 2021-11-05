@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto');
+
 body {
   margin: 0;
   background-color: #fafafa;
@@ -5,20 +7,20 @@ body {
 
 .navTitle {
   color: #0290ff;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.2rem;
   font-weight: bolder;
 }
 
 .navBooks {
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   color: #121212;
   font-weight: bold;
 }
 
 .navCategories {
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   color: #121212;
 }
@@ -51,7 +53,7 @@ body {
   background-color: white;
 }
 
-.formBtnDiv{
+.formBtnDiv {
   width: 18%;
 }
 
@@ -75,21 +77,21 @@ body {
 }
 
 .bookCategory {
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   font-weight: bold;
   color: #888;
 }
 
 .bookTitle {
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.4rem;
   font-weight: bold;
   color: #121212;
 }
 
 .bookAuthor {
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   color: #4386bf;
 }
@@ -100,7 +102,7 @@ body {
 }
 
 .bookActions li {
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   color: #4386bf;
 }
@@ -108,28 +110,28 @@ body {
 .booksBtnRemove {
   background-color: transparent;
   border: none;
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   color: #4386bf;
 }
 
 .bookProgress {
-  border: .5rem solid rgb(192, 191, 191);
-  border-top: .5rem solid #4386bf;
-  border-right: .5rem solid #4386bf;
-  border-bottom: .5rem solid #4386bf;
+  border: 0.5rem solid rgb(192, 191, 191);
+  border-top: 0.5rem solid #4386bf;
+  border-right: 0.5rem solid #4386bf;
+  border-bottom: 0.5rem solid #4386bf;
   border-radius: 50%;
   width: 80px;
   height: 80px;
 }
 
 .bookProgressNumber {
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
 }
 
 .bookStatus {
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   color: #888;
 }
@@ -139,24 +141,24 @@ body {
 }
 
 .bookChapterTitle {
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   color: #888;
 }
 
 .bookCurrentChapter {
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
 }
 
 .booksUpdateProgress {
-  font-family: RobotoSlab;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   background-color: #0290ff;
   border-radius: 3px;
   border: none;
-  padding: .5rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   color: white;
 }
 
@@ -164,6 +166,7 @@ body {
   .formBtnDiv {
     width: 94%;
   }
+
   .formCategorySelect {
     width: 25%;
   }
