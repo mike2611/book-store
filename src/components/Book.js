@@ -9,8 +9,13 @@ const Book = (props) => {
     dispatch(removeBook(e.target.value));
   };
 
-  const { id, title, author } = props;
-  if (id === 'id' && title === 'emptyList' && author === 'emptyList') {
+  const {
+    id,
+    title,
+    category,
+  } = props;
+
+  if (id === 'id' && title === 'emptyList' && category === 'emptyList') {
     return (
       <tr>
         <td>
@@ -25,7 +30,7 @@ const Book = (props) => {
         {title}
       </td>
       <td>
-        {author}
+        {category}
       </td>
       <td>
         <button type="button" className="btn btn-primary" value={id} onClick={removeBookToStore}>REMOVE</button>
@@ -37,7 +42,7 @@ const Book = (props) => {
 Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default (Book);
