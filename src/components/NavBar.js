@@ -14,7 +14,7 @@ const NavBar = () => (
         <Link to="/categories" className="nav-link">Categories</Link>
       </li>
     </ul>
-    <FaUserAlt className="navIcon ms-auto me-5 d-none d-md-flex" />
+    <FaUserAlt className="navIcon ms-auto d-none d-md-flex" />
   </nav>
 );
 
