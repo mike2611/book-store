@@ -28,7 +28,7 @@ body {
 .navIcon {
   color: #0290ff;
   font-size: 2rem;
-  margin-right: 14%;
+  margin-left: 55%;
 }
 
 /* formStyles */
@@ -171,4 +171,5 @@ body {
   .formCategorySelect {
     width: 25%;
   }
+  
 }
