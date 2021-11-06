@@ -25,15 +25,42 @@ const Book = (props) => {
     );
   }
   return (
-    <tr>
+    <tr className="bg-white bookContainer d-flex flex-column flex-md-row justify-content-around mb-3">
       <td>
-        {title}
+        <div>
+          <p className="bookCategory mb-0">{category}</p>
+          <h1 className="bookTitle">{title}</h1>
+          <h2 className="bookAuthor">Author Name</h2>
+          <ul className="bookActions d-flex">
+            <li className="me-2">Comment</li>
+            <li className="me-2">|</li>
+            <li className="me-2">
+              <button type="button" className="booksBtnRemove" value={id} onClick={removeBookToStore}>Remove</button>
+            </li>
+            <li className="me-2">|</li>
+            <li className="me-2">Edit</li>
+          </ul>
+        </div>
       </td>
-      <td>
-        {category}
-      </td>
-      <td>
-        <button type="button" className="btn btn-primary" value={id} onClick={removeBookToStore}>REMOVE</button>
+      <td className="mt-2">
+        <div className="d-flex">
+          <div className="d-flex align-items-center">
+            <div className="bookProgress me-4 d-none d-md-block" />
+            <div className="text-center ms-2">
+              <h1 className="bookProgressNumber">75%</h1>
+              <p className="bookStatus">Completed</p>
+            </div>
+          </div>
+          <div className="bookDivisor mx-2 mx-md-5 mt-1" />
+          <div className="d-flex flex-column align-items-center">
+            <p className="bookChapterTitle my-0">CURRENT CHAPTER</p>
+            <p className="bookCurrentChapter">Chapter 17</p>
+            <button type="button" className="booksUpdateProgress">
+              UPDATE
+              <span className="d-none d-md-inline"> PROGRESS </span>
+            </button>
+          </div>
+        </div>
       </td>
     </tr>
   );

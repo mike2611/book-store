@@ -41,17 +41,21 @@ const FormBook = (props) => {
 
   return (
     <div>
-      <h1>ADD NEW BOOK</h1>
-      <input type="text" placeholder="Book Title" name="title" value={inputs.title} onChange={changeInputs} />
-      <select name="category" value={inputs.category} onChange={changeInputs}>
-        <option>Horror</option>
-        <option>Romance</option>
-        <option>Fiction</option>
-        <option>Historical</option>
-        <option>Thriller</option>
-      </select>
-      <p className={classInactive ? 'd-none' : null}> You cant add a book that already exists in the table.</p>
-      <button type="button" onClick={submitBookToStore}>Add Book</button>
+      <h1 className="formTitle ms-1">ADD NEW BOOK</h1>
+      <div className="d-md-flex justify-content-around">
+        <input className="formTitleInput me-4 me-md-5" type="text" placeholder="Book Title" name="title" value={inputs.title} onChange={changeInputs} />
+        <select className="formCategorySelect me-0 me-md-5" name="category" value={inputs.category} onChange={changeInputs}>
+          <option>Horror</option>
+          <option>Romance</option>
+          <option>Fiction</option>
+          <option>Historical</option>
+          <option>Thriller</option>
+        </select>
+        <p className={classInactive ? 'd-none' : null}> You cant add a book that already exists in the table.</p>
+        <div className="d-flex justify-content-center formBtnDiv">
+          <button className="btnForm mt-4 mt-md-0 mb-3" type="button" onClick={submitBookToStore}>Add Book</button>
+        </div>
+      </div>
     </div>
   );
 };
